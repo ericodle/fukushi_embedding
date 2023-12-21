@@ -1,5 +1,5 @@
 ######################################################################
-ChiVe README example
+#ChiVe README example
 ######################################################################
 from pymagnitude import Magnitude
 
@@ -12,7 +12,7 @@ vectors.most_similar("流石に", topn=5)
 vectors.similarity("あっという間に", "流石に")
 
 ######################################################################
-EMBED
+#EMBED
 ######################################################################
 import pandas as pd
 import numpy as np
@@ -61,7 +61,7 @@ with open('/home/eo/Desktop/fukushi/adverb_embedding_dict.pkl', 'wb') as file:
 #    adverb_embedding_dict = pickle.load(file)
 
 ######################################################################
-k-means
+#K-means clustering
 ######################################################################
 
 import matplotlib.pyplot as plt
@@ -79,7 +79,7 @@ kmeans = KMeans(n_clusters=3, random_state=42)
 cluster_labels = kmeans.fit_predict(embedding_matrix)
 
 ######################################################################
-PCA 
+#PCA 
 ######################################################################
 
 # Apply PCA for dimensionality reduction to 2D
@@ -114,7 +114,7 @@ with open('/home/eo/Desktop/fukushi/PCA_cluster_dict.pkl', 'wb') as file:
 
 
 ######################################################################
-t-SNE
+#t-SNE
 ######################################################################
 
 # Apply t-SNE for dimensionality reduction to 2D
@@ -149,7 +149,7 @@ with open('/home/eo/Desktop/fukushi/tsne_cluster_dict.pkl', 'wb') as file:
     pickle.dump(PCA_cluster_dict, file)
 
 ######################################################################
-Confusion Matrix comparison
+#Confusion matrix comparison
 ######################################################################
 
 from sklearn.metrics import confusion_matrix
