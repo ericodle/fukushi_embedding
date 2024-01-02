@@ -1,0 +1,136 @@
+#########################################################
+Generate random subsample of adverb list
+#########################################################
+
+import pandas as pd
+import random
+
+# Load the CSV file into a pandas DataFrame
+input_file_path = '/content/normalized_adverbs.csv'
+output_file_path = '/content/subsample_400.csv'
+
+df = pd.read_csv(input_file_path)
+
+# Check if the dataframe has at least 400 rows
+if len(df) < 400:
+    print("Error: Input file does not contain enough words.")
+else:
+    # Take a random sample of 400 words
+    random_sample = df.sample(n=400, random_state=42)  # You can change the random_state for different random samples
+
+    # Save the random sample to a new CSV file
+    random_sample.to_csv(output_file_path, index=False)
+
+    print("Random sample of 400 words saved to:", output_file_path)
+
+#########################################################
+Classification schemes and their criteria
+#########################################################
+
+yamada 1936
+山 田 孝 雄 （ 1936）『 日 本 文 法 学 概 論 』 宝 文 館
+
+情態副詞 status adverbs
+程度副詞 degree adverbs
+陳述副詞 declarative adverbs
+
+nakau 1980 
+Nakau, Minoru. 1984. Bun-fukusi-no hiakaku. In Ketsuya Kunihiro (ed.), Nichi-ei Hikaku Kooza Vol.2 Bunpoo.
+Tokyo: Taisyuu-kan syoten 159–219.
+
+a. Pragmatic adverbs: hontoo-no tokoro ‘honestly,’ tumari-wa ‘briefly,’
+uchiwa-no- hanasi-da-ga ‘confidentially’
+b. Evaluative adverbs: odoroita-kotoni ‘surprisingly,’ saiwai-nimo ‘luckily’
+myoo-na-koto-ni ‘oddly enough,’
+too-zen-no koto nagara ‘not surprisingly’
+c. Modal adverbs: akiraka-ni ‘clearly,’ utagai-mo-naku ‘undoubtedly,’
+kitto ‘surely,’ osoraku ‘maybe’
+d. Domain adverbs: konpon-teki-ni-wa ‘fundamentally,’ risoo-o ie-ba ‘ideally,’
+genri-jyoo ‘in principle,’ teigi-jyoo ‘by definition’
+
+
+Noda (1984)
+Noda, Hisasi. 1984. Fukusi-no gojyun. Nihongo Kyooiku 52: 79–90.
+
+a. Adverbs of mood: tabun ‘perhaps,’ ainiku ‘unfortunately,’
+yoosuruni ‘in short’
+b. Adverbs of tense: rainen ‘next year,’ mukasi ‘formerly,’
+ni-san-nichi mae ‘several days ago’
+c. Adverbs of aspect: tokidori ‘sometimes,’ sankagetu ‘for three months,’
+dandan ‘gradually’
+d. Adverbs of voice: wazato ‘intentionally,’ tanosisooni ‘joyfully,’
+oogoede ‘loudly’
+e. Adverbs referring to objects: gatagata ‘shaky,’ kireini ‘neatly,’ marumaruto ‘fully’
+
+Endo (2007)
+Endo, Yoshio. 2007. Locality and Information Structure. Amsterdam: John Benjamins Publishing Company.
+
+
+Classified according to the particles that are at-
+tached to them: High adverbs, middle adverbs, and low adverbs
+
+a. odoroita-koto-ni zan’nenna-koto-ni koounna-koto-ni
+surprising-fact-Prt unfortunate-fact-Prt lucky-fact-Prt
+‘surprisingly’ ‘unfortunately’ ‘luckily’
+b. mazime-ni-mo kenage-ni-mo syoojiki-ni-mo
+serious-Prt-Prt admirable-Prt-Prt honest-Prt-Prt
+‘seriously’ ‘admirably’ ‘honestly’
+c. mazime-ni kenage-ni syoojiki-ni
+serious-Prt admirable-Prt honest-Prt
+‘seriously’ ‘admirably’ ‘honestly’
+
+Fujimaki (2009)
+Fujimaki, Kazuma. 2009. On the Relative Structural Position of High Adverbs and the Interpretation of ga-Marked
+Subject. Paper presented at the 139th Meeting of the Linguistic Society of Japan.
+
+a. Domain adverbs
+b. Speech act adverbs
+c. Evaluative adverbs
+d. Modal adverbs – CP
+e. Subject-oriented adverbs – TP
+f. Manner adverbs – vP
+
+#########################################################
+Scheme Class Codes
+#########################################################
+
+>Yamada_1936
+
+status adverbs ------------------ = 0
+degree adverbs ------------------ = 1
+declarative adverbs ------------- = 2
+
+>Nakau_1980 
+
+Pragmatic adverbs --------------- = 0
+Evaluative adverbs -------------- = 1
+Modal adverbs ------------------- = 2
+Domain adverbs ------------------ = 3
+
+>Noda_1984
+野田
+副詞の語順
+
+Adverbs of mood ----------------- = 0
+Adverbs of tense ---------------- = 1
+Adverbs of aspect --------------- = 2
+Adverbs of voice ---------------- = 3
+Adverbs referring to objects ---- = 4
+
+>Endo_2007
+
+High adverbs -------------------- = 0
+Middle adverbs ------------------ = 1
+Low adverbs --------------------- = 2
+
+>Fujimaki_2009
+
+Domain adverbs ------------------ = 0
+Speech act adverbs -------------- = 1
+Evaluative adverbs -------------- = 2
+Modal adverbs  ------------------ = 3
+Subject oriented adverbs -------- = 4
+Manner adverbs  ----------------- = 5
+
+
+
