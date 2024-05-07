@@ -5,7 +5,7 @@ This project utilizes word embeddings and various clustering algorithms to group
   <img src="img/adverb_logo.png" width="350" title="logo">
 </p>
 
-## About this proejct
+## About this project
 
     Imports: The necessary libraries are imported, including tools for data manipulation, clustering algorithms, dimensionality reduction, and visualization.
 
@@ -106,15 +106,15 @@ Activate the GUI by running the following terminal command:
 python3 xxx.py
   ```
 
-#### Pre-process sorted music dataset
+#### function 1
 
-Simply click "MFCC Extraction" from the Hub Window.
+Simply click
 
-### Train a model
+### function 2
 
-Simply click "Train Model" from the Hub Window.
+Simply click
 
-#### Sort music using trained model
+#### function 3
 
 (Feature coming soon)
 
