@@ -2,7 +2,7 @@
 This project utilizes word embeddings and various clustering algorithms to group adverbs based on semantic similarity, facilitating deeper insights into linguistic patterns.
 
 <p align="center">
-  <img src="img/gd_logo.png" width="350" title="logo">
+  <img src="img/adverb_logo.png" width="350" title="logo">
 </p>
 
 ## About this proejct
